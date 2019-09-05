@@ -2,7 +2,7 @@ from xmlrpc import client
 
 # Credential Variables required
 server_url = 'http://localhost:8069' # Odoo instance IP
-db_name = '12.0-odoo-training-tai'
+db_name = '12.0-odoo-training-tai-2'
 username = 'admin'
 password = 'admin'
 
@@ -17,7 +17,7 @@ print(user_id)
 
 models = client.ServerProxy('%s/xmlrpc/2/object' % server_url)
 if user_id:
-    search_domain = [('entity', '=', True)]
+    search_domain = [('is_certification_body', '=', True)]
     entity_partners = models.execute_kw(db_name, user_id, password,
                                         'res.partner', 'search_read',
                                         [search_domain, ['name', 'entity']],{})
