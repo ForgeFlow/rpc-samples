@@ -17,5 +17,7 @@ def main():
     cert_ids = cert_model.search([])
     cert_recordset = cert_model.browse(cert_ids)
     print(cert_recordset)
+
+
 if __name__ == "__main__":
     main()
